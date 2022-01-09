@@ -6,8 +6,7 @@ to do
 * [X] mongodb connection
 * [ ] refine login, registeration
 * [ ] adding JWT tokens for login
-* [ ] adding session for _logged in_ user
-
+* [X] adding session for _logged in_ user
 * [ ] creating endpoint for asking a question
 * [ ] GET endpoint for enumerating all questions
 * [ ] POST endpoint for answering a question
@@ -27,7 +26,7 @@ to do
 
 ### 2. Post 
 - ```question```
-- List of ```answer``s
+- List of ```Answer```s
 - ```User```
 
 ### 3. Question
