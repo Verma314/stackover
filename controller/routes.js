@@ -1,4 +1,5 @@
 const dbUtilsQnA =  require('../dao/dbUtilsQnA')
+const constants = require ('../configs/constants');
 
 module.exports = function (app) {
 
@@ -18,7 +19,7 @@ module.exports = function (app) {
         }
 
         req.body["username"] = req.session.loggedInUser;
-
+        req.body["questionId"] = constants.randomIdGenerator();
 
         dbUtilsQnA.askQuestion(req.body, function (result,err) {
             if ( err == null ) {
@@ -31,6 +32,13 @@ module.exports = function (app) {
 
     });
 
+    app.post('/answer', function (req, res) {
+        /**
+         * in order to answer a question the Request body should contain one parameter: questionId 
+         * 
+         */
+        return res.send();
+    });
 
     app.get('/2', function (req, res) {
         res.send('Hello world !');

@@ -10,7 +10,7 @@
 * [X] adding session for _logged in_ user
 * [X] creating endpoint for asking a question
 * [ ] GET endpoint for enumerating all questions
-* [ ] POST endpoint for answering a question
+* [ ] POST endpoint for answering a question.
 * [ ] GET endpoint for enumerating answers to a question 
 * [ ] Endpoint to upvote a question or an answer
 * [ ] Endpoint to get stats of a user
