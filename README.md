@@ -1,13 +1,14 @@
 # Building a sample  Q&A website such as StackOverflow or Reddit
 
-to do
+## to do
 
 * [X] login, registeration 
+* [ ] adding HTTP error codes for faliure etc
 * [X] mongodb connection
 * [ ] refine login, registeration
 * [ ] adding JWT tokens for login
 * [X] adding session for _logged in_ user
-* [ ] creating endpoint for asking a question
+* [X] creating endpoint for asking a question
 * [ ] GET endpoint for enumerating all questions
 * [ ] POST endpoint for answering a question
 * [ ] GET endpoint for enumerating answers to a question 
@@ -16,7 +17,6 @@ to do
 * [ ] Deploying this to cloud
 
 
--- 
 
 ## Objects
 
@@ -31,7 +31,7 @@ to do
 
 ### 3. Question
 - ```Statement```
-- List of ```Answer```s
+- List of ```Answer``` strings 
 - ```Upvotes```
 - ```User```
 

@@ -4,9 +4,10 @@ const session = require('express-session')
 const bodyParser = require('body-parser')
 const app = express();
 
-console.log('May Node be with you')
 
+console.log('Server is up and running...')
 
+// to do --> put these in a config file
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(session({
     // It holds the secret key for session
@@ -16,14 +17,13 @@ app.use(session({
 }));
 
 
+
+
+
 app.listen(8080, function (req, res) {
     console.log('listening on 8080')
 })
 
-// handers:
-app.get('/', function (req, res) {
-    res.send("hi")
-})
 
 app.post('/register', (req, res) => {
     dbUtils.registerUser(req.body);
@@ -70,4 +70,4 @@ app.get('/session', (req, res) => {
 });
 
 
-
+require('./controller/routes.js')(app); 
