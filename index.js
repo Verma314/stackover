@@ -16,7 +16,6 @@ app.use(session({
 }));
 
 
-
 app.listen(8080, function (req, res) {
     console.log('listening on 8080')
 })
@@ -41,17 +40,33 @@ app.post('/login', (req, res) => {
                 //setting logged in user in session
                 
             } else if ( status == "NON") {
+                // user is logged in
                 res.send(searchResponse);
                 
+            } else {
+                res.send("Error in logging in. Please contact team")
             }
             
         });
 });
 
-//check session
-app.post('/session', (req, res) => {
-    res.send(req.session.loggedInUser +  " is logged in ");
-    console.log(req.session);
+app.get('/logout', (req,res) => { 
+    if (req.session.loggedInUser != null ) {
+        req.session.loggedInUser  = null; 
+        res.send("Logged the user out!")        
+    } else {
+        res.send("No one is logged in!")       
+    }                                    
+});
+
+//check session, i.e. who is logged in
+app.get('/session', (req, res) => {
+    if (  req.session.loggedInUser != null ) {
+        res.send(req.session.loggedInUser +  " is logged in ");
+        console.log(req.session);
+    } else {
+        res.send("No user is logged in!")
+    }
 });
 
 

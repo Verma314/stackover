@@ -1,11 +1,13 @@
-# Building some simple endpoints for  Q&A website such as StackOverflow or Reddit
+# Building a sample  Q&A website such as StackOverflow or Reddit
 
 to do
 
-* [ ] login, registeration 
-* [ ] mongodb connection
+* [X] login, registeration 
+* [X] mongodb connection
+* [ ] refine login, registeration
 * [ ] adding JWT tokens for login
 * [ ] adding session for _logged in_ user
+
 * [ ] creating endpoint for asking a question
 * [ ] GET endpoint for enumerating all questions
 * [ ] POST endpoint for answering a question
@@ -20,6 +22,8 @@ to do
 ## Objects
 
 ### 1. User
+- username
+- password
 
 ### 2. Post 
 - ```question```
@@ -36,3 +40,34 @@ to do
 - ```Statement```
 - ```Upvotes```
 - ```User```
+
+--
+
+## Public Endpoints
+1. POST http://localhost:8080/login
+
+Header:
+Content-Type: application/x-www-form-urlencoded
+
+Body:
+username - <username>
+password - <password>
+
+2. GET http://localhost:8080/session
+
+to check who is logged in 
+
+3. GET http://localhost:8080/logout
+
+to log the user out.
+
+4. POST http://localhost:8080/register
+
+to register a new user
+
+Header:
+Content-Type: application/x-www-form-urlencoded
+
+Body:
+username - <username>
+password - <password>
